@@ -39,6 +39,12 @@ function log(a){
 	if (debug) console.log(a);
 }
 
+/**
+ * xCore
+ */
+function $(a){ 
+	return document.getElementById(a);
+}
 
 /**
  * Creating a new tab in Chrome
