@@ -11,7 +11,8 @@
     "description": "Project Ceol.",
     
     "icons": {
-		"128": "img/Icon_256.png"
+		"16": "img/icon_16.png",
+		"128": "img/icon_256.png"
 	},
 	
 	"permissions": [
