@@ -1,0 +1,17 @@
+{
+	"name": "Zipply",
+	"version": "0.3",
+	"browser_action": {
+        "default_icon": "img/icon.png",
+        "default_popup": "popup.html"
+    },
+    "description": "Project Ceol.",
+    
+    "icons": {
+		"128": "img/Icon_256.png"
+	},
+	
+	"permissions": [
+		"http://www.google.com/*", "http://www.google.be/*", "tabs", "http://*.zippyshare.com/*"
+	]
+}
