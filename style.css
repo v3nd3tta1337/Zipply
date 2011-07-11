@@ -1,0 +1,80 @@
+/* Loading the font for the logo */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Orbitron-Bold'), url('fontLogo.woff') format('woff');
+}
+
+#cc{
+	position:absolute;
+	margin-bottom:auto;
+	margin-top:auto;
+	top:40%;
+	left:20%;
+	right:20%;
+	height:50px;
+	border:0px solid black;
+	padding:5px;
+}
+
+#resultsPage{
+	margin-left: 20%;
+	margin-right: 20%;
+	width:60%;
+}
+
+#logo{
+	width:100%;
+	font-size:5em;
+	color:grey;
+	letter-spacing:7px;
+	text-align:center;
+	font-family: 'Orbitron', serif;
+	font-weight: bold;
+}
+.blue, .blue a{
+	color: #1375FA;
+	font-weight: bold;
+
+}
+
+.blue a{
+	text-decoration: underline;
+}
+
+.blue a:hover{
+	color: #1375FA;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+body{
+	background-color: black; 
+	font-family:Verdana;
+}
+#searchField{
+	font-size:2em;
+	text-align:center;
+	width:100%;
+	color:grey;
+	border-radius:10px;
+	border:1px solid #CECECE;
+	outline: none;
+}
+.footer{
+	font-size: 0.7em;
+	color: grey;
+	text-align:center;
+	width:100%;
+	display:block;
+	margin-top: 10px;
+}
+a {
+	color:grey;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
