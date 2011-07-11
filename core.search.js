@@ -104,10 +104,11 @@ function proces(a){
 		zippyfile= links[i].split("/")[2];
 		
 		
-		toWrite = '<a href="javascript:directDL(\'http://' + links[i] +'\')"><img src="img/dl.png" width="16">&nbsp;</a>'+
-			'<a href="javascript:zippyWrite(\'' + zippywww +'\', \'' + zippyfile + '\')">L</a>' +
+		toWrite = '<a href="javascript:directDL(\'http://' + links[i] +'\')"><img src="img/dl.png" width="16" alt="Download"></a>' +
+			'<a href="javascript:zippyWrite(\'' + zippywww +'\', \'' + zippyfile + '\')">'+
+			'<img src="img/play.png" width="16" style="margin-left: -5px; padding-right: 10px" alt="Preview"></a>' +
 			'<a href="javascript:gotoURL(\'http://' + links[i] +'\')">' + titles[i] + '</a>';
 
-		$("results").innerHTML +=  toWrite /* + zippyWrite(zippywww, zippyfile) */ +  "<br><br><div style='clear:both;'></div>";
+		$("results").innerHTML +=  toWrite +  "<br><br><div style='clear:both;'></div>";
 	}
 }
