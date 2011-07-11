@@ -17,196 +17,31 @@
 -->
 <html>
 <head>
+	<title>Zipply v0.4</title>
 	<script src="core.logic.js" type="text/javascript" charset="utf-8"></script>
+	<script src="core.search.js" type="text/javascript" charset="utf-8"></script>
 	
-	<style type="text/css">
-	/**
-	 * Credits for the design goto my friend Willem
-	 * Thanks bro!
-	 */
-
-	/* Font-face for the logo */
-	@font-face {
-		font-family: 'Alba';
-		font-style: normal;
-		font-weight: normal;
-		src: local('Alba'), local('Alba'), url('fontAlba') format('woff');
-	}
-	
-	body{
-		margin:0;
-		padding:0;
-		background: -webkit-gradient(linear, left top, left bottom, 
-			color-stop(0%,#7d7e7d), color-stop(100%,#0e0e0e));
-	}
-	
-	#title{
-		width: 100%;
-		color: #e1df33;
-		font-size: 4em;
-		font-family: 'Alba';
-		padding-top: 20px;
-		text-align:center;
-		letter-spacing: 10px;
-	}
-	
-	#search{
-		width: 100%;
-		text-align:center;
-		padding-bottom: 20px;
-		margin-top: -10px;
-	}
-	
-	#searchField{
-		width: 85%;
-		font-size: 1.5em;
-		text-align:center;
-		color: #B9B7C0;
-		border: 0px;
-		border-radius: 10px;
-		outline: none; /* hide the glow */
-	}
-	#results{
-		padding: 5px;
-		padding-top: 10px;
-		margin-bottom: 0px;
-		border-bottom-left-radius: 10px;
-		border-bottom-right-radius: 10px;		
-	}
-	
-	a{
-		color:#fff;
-		text-decoration: none;
-	}
-	
-	a:hover{
-		text-decoration: underline;
-	}
-	</style>
-
-	<script type="text/javascript">
-	function loading(a){
-		if(a){
-			document.getElementById("loading").style.display = "block";
-			document.getElementById("results").style.display = "none";
-		}else {
-			document.getElementById("loading").style.display = "none";
-			document.getElementById("results").style.display = "block";
-		}
-	}
-	/**
-	 * Get results from Google
-	 */
-	function search(){
-		loading(true); //start loading
-		
-		var xmlDoc = null;
-		var query = escape(document.getElementById("searchField").value);
-		
-		//Generate random google domain
-		dom = ["be", "com"];
-		var g = dom[Math.floor(Math.random()*dom.length)]
-		
-		try{
-		  	xmlhttp=new XMLHttpRequest();
-
-			//xmlhttp.open("GET", "stuff/GoogleResults.html", false);
-			xmlhttp.open("GET", "http://www.google."+g+"/search?q=" + query + "+site%3Azippyshare.com+inurl%3A%2Fv%2F", false)
-
-			xmlhttp.onreadystatechange = function() {
-			    if (xmlhttp.readyState != 4) {
-			        log("[STATUS] Could not connect. Google down?");
-					return;
-			    }else{
-					xmlDoc = xmlhttp.responseText;
-				}
-			}
-
-			xmlhttp.send();
-
-		}catch(e){
-			log("[ERROR] Error while trying to reach Google: " + e.message);
-		}
-
-		proces(xmlDoc);
-	}
-
-
-
-	/**
-	 * Process results
-	 */
-	function proces(a){
-		log("[LOG] Processing data got from Google");
-
-
-		/**
-	 	* Grabbing the links
-	 	*/
-		var regex = /<cite>(.+?)<\/cite>/gi;
-		var links = [];
-		var e;
-
-		while (e = regex.exec(a)) links.push(e[1].replace(/<.*?>/g, ''));
-
-		/**
-	 	* Grabbing the titles
-	 	*/
-		var regex = /<h3 class="r">(.+?)<\/h3>/gi;
-		var titles = [];
-		var e = null;
-
-		while (e = regex.exec(a)) titles.push(e[1].replace(/<.*?>/g, '')); //Clean the tags and push them to array
-
-
-
-		/**
-	 	* Cleaning the titles
-	 	*/
-		for(i=0; i <= titles.length-1; i++){			
-			removeFromArray(titles, "Zippyshare.com -"); //Filter known dead files
-
-			titles[i] = titles[i].replace(/Zippyshare.com - /g, '').replace(/ - Zippyshare.com/g, '').replace(/.mp3/g, '');
-		}
-
-
-		/**
-	 	* Writing them out!
-	 	*/
-		document.getElementById("results").innerHTML = "" //clean previous search results
-
-		for(i=0; i <= titles.length -1; i++){
-			toWrite = '<a href="javascript:directDL(\'http://' + links[i] +'\')"><img src="img/dl.png" width="16">&nbsp;</a><a href="javascript:gotoURL(\'http://' + links[i] +'\')">' + titles[i] + '</a>';
-
-			zippywww= links[i].split(".", 1);
-			zippyfile= links[i].split("/")[2];		
-
-			document.getElementById("results").innerHTML +=  toWrite + zippyWrite() +  "<br><br><div style='clear:both;'></div>";
-		}
-		
-		
-		loading(false); //stop loading
-	}
-	</script>
+	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
 </head>
-<body style="width: 600px" onload="document.getElementById('searchField').focus()">
-	<div id="title">Zipply</div>
-	<div id="search">
-		<form action="javascript:search();">
-			<input type="text" id="searchField">
-			<!--<input type="submit" value="Search">-->
-		</form>
-	</div>
+<body>
 
-	<div id="loading" style="text-align:center; margin-top: 20px; margin-bottom: 20px; display:none;">
-		<img src="img/load.gif">
-	</div>
-	
-	<div id="results">
-		
-	</div>
-   <script>
-     var _gaq = _gaq || [];
+<div id="cc">
+	<div id="logo"><span class="blue">Z</span>ipply</div>
+
+	<form action="javascript:search()">
+		<input type="text" id="searchField" autocomplete="off" autofocus="autofocus"/>
+	</form>
+
+	<span class="footer" id="footer"><a href="about.html">About</a> | <a href="contact.html">Donate</a></span>
+</div>
+
+<div id="resultsPage" style="display:none">
+	<div id="logo"><span class="blue">Z</span>ipply</div>
+	<div id="results"></div>
+</div>
+
+<script>
+   /*  var _gaq = _gaq || [];
      _gaq.push(['_setAccount', 'UA-22487325-1']);
      _gaq.push(['_trackPageview']);
 
@@ -215,6 +50,7 @@
        ga.src = 'https://ssl.google-analytics.com/ga.js';
        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
      })();
-   </script>
+	*/
+</script>
 </body>
 </html>

@@ -40,7 +40,7 @@ function log(a){
 }
 
 /**
- * xCore
+ * pico.js
  */
 function $(a){ 
 	return document.getElementById(a);
