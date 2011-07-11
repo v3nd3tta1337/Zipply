@@ -19,9 +19,15 @@ function search(){
 	var xmlDoc = null;
 	var query = escape($("searchField").value);
 	
-	// goto the results
-	$("cc").style.display = "none";
-	$("resultsPage").style.display = "block";
+	// Move the logo and search field to the top
+	$("cc").style.top = "5%";
+	$("ccShade").style.top = "2%";
+	$("ccShade").style.bottom = "2%";
+	
+	$("results").style.display = "block";
+	
+	// footer, be gone!
+	$("footer").style.display = "none";
 	
 	//Generate random google domain
 	dom = ["be", "com"];
@@ -94,11 +100,14 @@ function proces(a){
 	$("results").innerHTML = "" //clean previous search results
 
 	for(i=0; i <= titles.length -1; i++){
-		toWrite = '<a href="javascript:directDL(\'http://' + links[i] +'\')"><img src="img/dl.png" width="16">&nbsp;</a><a href="javascript:gotoURL(\'http://' + links[i] +'\')">' + titles[i] + '</a>';
-
 		zippywww= links[i].split(".", 1);
-		zippyfile= links[i].split("/")[2];		
+		zippyfile= links[i].split("/")[2];
+		
+		
+		toWrite = '<a href="javascript:directDL(\'http://' + links[i] +'\')"><img src="img/dl.png" width="16">&nbsp;</a>'+
+			'<a href="javascript:zippyWrite(\'' + zippywww +'\', \'' + zippyfile + '\')">L</a>' +
+			'<a href="javascript:gotoURL(\'http://' + links[i] +'\')">' + titles[i] + '</a>';
 
-		$("results").innerHTML +=  toWrite + zippyWrite() +  "<br><br><div style='clear:both;'></div>";
+		$("results").innerHTML +=  toWrite /* + zippyWrite(zippywww, zippyfile) */ +  "<br><br><div style='clear:both;'></div>";
 	}
 }

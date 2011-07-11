@@ -10,18 +10,27 @@
 	position:absolute;
 	margin-bottom:auto;
 	margin-top:auto;
-	top:40%;
-	left:20%;
-	right:20%;
-	height:50px;
-	border:0px solid black;
+	top:35%;
+	bottom:30%;
+	left:30%;
+	right:30%;
 	padding:5px;
 }
 
-#resultsPage{
-	margin-left: 20%;
-	margin-right: 20%;
-	width:60%;
+#ccShade{
+	border-radius: 10px;
+	background-color: #000;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.2)));
+	
+	position:absolute;
+	top:25%;
+	bottom:30%;
+	left:20%;
+	right:20%;
+}
+
+#results{
+	width:100%;
 }
 
 #logo{
@@ -33,6 +42,16 @@
 	font-family: 'Orbitron', serif;
 	font-weight: bold;
 }
+
+#player{
+	bottom: 5px;
+	text-align:center;
+	margin-top: 50px;
+	width:100%;
+	left: auto;
+	right: auto;
+}
+
 .blue, .blue a{
 	color: #1375FA;
 	font-weight: bold;
@@ -52,6 +71,8 @@
 body{
 	background-color: black; 
 	font-family:Verdana;
+	background-image: url("img/bg.jpg");
+	background-repeat: no-repeat;
 }
 #searchField{
 	font-size:2em;
