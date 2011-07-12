@@ -27,7 +27,7 @@
 <!-- Black background shade -->
 <div id="ccShade"> </div>
 
-<div id="cc">
+<div class="cc" id="cc">
 	<div id="logo"><span class="blue">Z</span>ipply</div>
 
 	<form action="javascript:search()">
@@ -35,14 +35,23 @@
 	</form>
 
 	<span id="footer">
-		<a href="about.html">About</a> | <a href="contact.html">Donate</a>
+		<a href="javascript:$('donate').style.display = 'block'; $('cc').style.display = 'none'">Donate</a>
 	</span>
 	
 	<div id="results" style="display:none"> </div>
 	<div id="player"> </div>
 </div>
 
-
+<div class="cc" id="donate">
+	<center><h1>Donate</h1></center>
+	<p>I don't accept money as a donation. However, you can support the development of Zipply by registering a dropbox account through this link:</p>
+	
+	<center><a href="http://db.tt/8pHho5n">http://db.tt/8pHho5n</a></center>
+	
+	<p>It's free for you and gives us both an additional 250mb of storage on dropbox</p>
+	
+	<p>Thank you!</p>
+</div>
 
 <script>
    /*  var _gaq = _gaq || [];

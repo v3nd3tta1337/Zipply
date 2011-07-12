@@ -6,7 +6,7 @@
   src: local('Orbitron-Bold'), url('fontLogo.woff') format('woff');
 }
 
-#cc{
+.cc{
 	position:absolute;
 	margin-bottom:auto;
 	margin-top:auto;
@@ -30,6 +30,12 @@
 
 #results{
 	width:100%;
+}
+
+#donate{
+	display:none;
+	color: grey;
+	margin-top: -10%;
 }
 
 #logo{
@@ -63,6 +69,7 @@ body{
 	background-repeat: no-repeat;
 	-webkit-user-select: none;
 	cursor:default; /* fixes edit marker over logo */
+	min-height: 650px;
 }
 #searchField{
 	font-size:2em;
