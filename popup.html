@@ -20,14 +20,11 @@
 	<title>Zipply v0.4</title>
 	<script src="core.logic.js" type="text/javascript" charset="utf-8"></script>
 	<script src="core.search.js" type="text/javascript" charset="utf-8"></script>
-
+	
 	<link rel="stylesheet" href="style.css" type="text/css" charset="utf-8">
 </head>
 <body>
-<!-- Black background shade -->
-<div id="ccShade"> </div>
-
-<div class="cc" id="cc">
+<div class="cc" id="home">
 	<div id="logo"><span class="blue">Z</span>ipply</div>
 
 	<form action="javascript:search()">
@@ -35,18 +32,18 @@
 	</form>
 
 	<span id="footer">
-		<a href="javascript:$('donate').style.display = 'block'; $('cc').style.display = 'none'">Donate</a>
+		<a href="javascript:$('home').style.display = 'none'; $('donate').style.display = 'block';">Donate</a>
 	</span>
 	
 	<div id="results" style="display:none"> </div>
-	<div id="player"> </div>
+	<div id="player" style="display:none"> </div>
 </div>
 
 <div class="cc" id="donate">
 	<center><h1>Donate</h1></center>
 	<p>I don't accept money as a donation. However, you can support the development of Zipply by registering a dropbox account through this link:</p>
 	
-	<center><a href="http://db.tt/8pHho5n">http://db.tt/8pHho5n</a></center>
+	<center><a href="http://db.tt/8pHho5n" style="font-weight:bold">http://db.tt/8pHho5n</a></center>
 	
 	<p>It's free for you and gives us both an additional 250mb of storage on dropbox</p>
 	

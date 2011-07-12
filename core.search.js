@@ -20,11 +20,11 @@ function search(){
 	var query = escape($("searchField").value);
 	
 	// Move the logo and search field to the top
-	$("cc").style.top = "5%";
-	$("ccShade").style.top = "2%";
-	$("ccShade").style.bottom = "2%";
-	
+	$("home").style.marginTop = "2%";
 	$("results").style.display = "block";
+	
+	// Show the player!
+	$("player").style.display = "block";
 	
 	// footer, be gone!
 	$("footer").style.display = "none";
