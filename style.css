@@ -88,25 +88,3 @@ a {
 a:hover{
 	text-decoration: underline;
 }
-
-/**
- * CSS3 Implementation of Aristo button 
- */
-button {
-  margin: 5px;
-  -khtml-appearance: none;
-  background: none;
-  -webkit-border-image: url(img/button.png) 2 2 2 2 stretch stretch;
-  padding: 3px 8px;
-  color: #1C4257;
-  -webkit-transition: -webkit-box-shadow 0.2s linear;
-  text-shadow: 0px 1px 1px #fff;
-}
-
-button:hover {
-  -webkit-box-shadow: 0 0 15px #A1CAE2;
-}
-
-button:active {
-  -webkit-border-image: url(img/button_hover.png) 2 2 2 2 stretch stretch;
-}
