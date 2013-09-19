@@ -16,7 +16,7 @@
 	along with Zipply.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-var debug = false; //Debugging is off
+var debug = true; //Debugging is off
 
 
 /**

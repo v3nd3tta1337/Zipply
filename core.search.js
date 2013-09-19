@@ -27,17 +27,19 @@ function search(){
 	$("player").style.display = "block";
 	
 	// footer, be gone!
-	$("footer").style.display = "none";
+	//$("footer").style.display = "none";
 	
 	//Generate random google domain
-	dom = ["be", "com"];
-	var g = dom[Math.floor(Math.random()*dom.length)];
+	//dom = ["be", "com"];
+	//var g = dom[Math.floor(Math.random()*dom.length)];
 	
 	try{
 	  	xmlhttp=new XMLHttpRequest();
 
 		//xmlhttp.open("GET", "stuff/GoogleResults.html", false);
-		xmlhttp.open("GET", "http://www.google."+g+"/search?q=" + query + "+site%3Azippyshare.com+inurl%3A%2Fv%2F", false)
+		//xmlhttp.open("GET", "http://www.google."+g+"/search?q=" + query + "+site%3Azippyshare.com+inurl%3A%2Fv%2F", false)
+		//xmlhttp.open("GET", "stuff/GoogleResults2.html", false);
+		xmlhttp.open("GET", "http://www.zippysharesmp3.com/search/?cx=001760994154815480584%3Aztmpfifoen0&cof=FORID%3A9&ie=UTF-8&q=" + query + "&sa=Search&siteurl=www.zippysharemp3.com%2F&ref=www.google.de%2F&ss=3618j1474344j14", false)
 
 		xmlhttp.onreadystatechange = function() {
 		    if (xmlhttp.readyState != 4) {
