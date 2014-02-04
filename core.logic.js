@@ -50,7 +50,6 @@ function $(a){
 function gotoURL(a){
 	chrome.tabs.create({'url': a});
 	self.close();
-	_gaq.push(['_trackEvent', 'gotoZippyshare', 'clicked']);
 }
 
 
@@ -67,8 +66,7 @@ function directDL(a){
 	            code: "window.location = document.getElementById('dlbutton').href;"
 	        });
 	    });
-	_gaq.push(['_trackEvent', 'DirectDownload', 'clicked']);
-}
+	}
 
 
 /**

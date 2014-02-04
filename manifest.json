@@ -1,6 +1,7 @@
 {
 	"name": "Zipply+",
-	"version": "0.4",
+	"version": "0.6",
+    "manifest_version": "2",
 	
 	"app": {
     	"launch": {
@@ -17,6 +18,6 @@
 	},
 	
 	"permissions": [
-		"http://www.google.com/*", "http://www.google.be/*", "tabs", "http://*.zippyshare.com/*"
+		"https://www.google.com/*", "http://*/*", "https://*/*", "tabs", "http://*.zippyshare.com/*"
 	]
 }
